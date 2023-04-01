@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter View Ratio Calculator",
+  "version": "0.1.0",
+  "description": "Calculating the ratio of views to likes",
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["tabs"],
+  "host_permissions": ["https://*.twitter.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/logo.png"],
+      "matches": ["https://*.twitter.com/*"]
+    }
+  ]
+}
